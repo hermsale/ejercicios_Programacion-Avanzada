@@ -10,13 +10,5 @@ public class ParticipanteLimitado extends Participante{
     @Override
     public boolean tieneRestriccion() {
         return true;
-    }
-
-
-    @Override
-    public String toString() {
-        return "ParticipanteLimitado []";
-    }
-
-        
+    }       
 }

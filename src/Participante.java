@@ -29,7 +29,8 @@ public abstract class Participante implements AsignarRestriccion{
             this.nombre = nombre;
     }
 
-    // este metodo define si esta limitado o si se puede inscribir a varios cursos
-    // public void inscribirCurso(){
-    // }
+    @Override
+    public String toString() {
+        return "id: " + getId() + ", nombre: " + getNombre() + "";
+    }
 }

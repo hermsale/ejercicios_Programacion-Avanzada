@@ -5,5 +5,9 @@ public class ParticipanteSinRestriccion extends Participante{
         super(nombre);
     }
 
-    
+    // este usuario NO posee limitaciones para inscribirse a varios cursos
+    @Override
+    public boolean tieneRestriccion() {
+        return false;
+    }
 }

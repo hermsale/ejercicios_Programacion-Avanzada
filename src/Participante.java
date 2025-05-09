@@ -1,11 +1,15 @@
-public abstract class Participante {
-    // creo un contador para llevar el conteo de identificador unico
+public abstract class Participante implements AsignarRestriccion{
+    
+    // Cada participante debe tener al menos un identificador único y un nombre válido. - LISTO
     private int id;
     private String nombre;
     private static int contador = 0;
 
     public Participante(String nombre) {
+        // Uso el setter para asignar el nombre, ya que incluye validaciones
         setNombre(nombre);
+        // Si no hubiera validaciones, podría asignarlo directamente:
+        // this.nombre = nombre;
         contador=contador+1;
         this.id = contador;
     }
@@ -24,4 +28,8 @@ public abstract class Participante {
         }
             this.nombre = nombre;
     }
+
+    // este metodo define si esta limitado o si se puede inscribir a varios cursos
+    // public void inscribirCurso(){
+    // }
 }

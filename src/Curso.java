@@ -5,24 +5,24 @@ public class Curso {
     private int cupoMaximo;
     
     public Curso(String nombre, int codigo, int cupoMaximo) {
-        this.nombre = nombre;
-        this.codigo = codigo;
-        this.cupoMaximo = cupoMaximo;
+        setCupoMaximo(cupoMaximo);
+        setNombre(nombre);
+        setCodigo(codigo);
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    private void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public int getcodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setcodigo(int codigo) {
+    private void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -30,9 +30,15 @@ public class Curso {
         return cupoMaximo;
     }
 
-    public void setCupoMaximo(int cupoMaximo) {
+    private void setCupoMaximo(int cupoMaximo) {
+        if(cupoMaximo<0){
+            throw new IllegalArgumentException("El numero de cupo máximo no puede ser inferior a 0.");
+        }
         this.cupoMaximo = cupoMaximo;
     }
 
-    
+    @Override
+    public String toString() {
+        return "nombre: " + getNombre() + ", codigo:" + getCodigo() + ", cupoMaximo: " + getCupoMaximo();
+    }
 }

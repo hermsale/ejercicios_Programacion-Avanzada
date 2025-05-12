@@ -3,11 +3,22 @@ public class Curso {
     private String nombre;
     private int codigo;
     private int cupoMaximo;
+    private int cantidadInscriptos =0;
     
-    public Curso(String nombre, int codigo, int cupoMaximo) {
+    public Curso(String nombre, int codigo, int cupoMaximo, int cantidadInscriptos) {
         setCupoMaximo(cupoMaximo);
         setNombre(nombre);
         setCodigo(codigo);
+        this.cantidadInscriptos = cantidadInscriptos;
+    }
+
+    
+    public int getcantidadInscriptos(){
+        return cantidadInscriptos;
+    }
+    
+    public void setcantidadInscriptos(int cantidadInscriptos){
+         this.cantidadInscriptos = cantidadInscriptos;
     }
 
     public String getNombre() {
@@ -38,7 +49,10 @@ public class Curso {
     }
 
     @Override
-    public String toString() {
-        return "nombre: " + getNombre() + ", codigo:" + getCodigo() + ", cupoMaximo: " + getCupoMaximo();
+public String toString() {
+    return "Curso: " + getNombre() + "\n" +
+           "Código: " + getCodigo() + "\n" +
+           "Cupo máximo: " + getCupoMaximo() + "\n" +
+           "Inscriptos actuales: " + getcantidadInscriptos() ;
     }
 }

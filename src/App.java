@@ -2,10 +2,9 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Instituto inst = new Instituto();
-
         Participante participante1=null;
         Participante participante2=null;
-        Participante participante3=null; // participante con limitacion 
+        Participante participante3=null; // participante con limitacion
         Curso curso1=null;
         Curso curso2=null;
         Curso curso3=null;
@@ -24,7 +23,7 @@ public class App {
         try {
             participante2 = new ParticipanteSinRestriccion("");
         } catch (Exception e) {
-            System.out.println(e);        
+            System.out.println(e);
         }
 
         try {
@@ -33,6 +32,7 @@ public class App {
             System.out.println(e);
         }
 
+        System.out.println("Estoy desde el nuevo IDE");
         inst.registrarParticipante(participante1);
         inst.registrarParticipante(participante2);
         inst.registrarParticipante(participante3);
